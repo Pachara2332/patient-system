@@ -87,7 +87,7 @@ export default function Form({ onSubmit, onChange }: FormProps) {
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              className={`pl-10 block w-full rounded-lg border ${errors.firstName ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
+              className={`pl-10 block w-full rounded-lg border text-gray-900 ${errors.firstName ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
               placeholder="John"
             />
           </div>
@@ -106,7 +106,7 @@ export default function Form({ onSubmit, onChange }: FormProps) {
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              className={`pl-10 block w-full rounded-lg border ${errors.lastName ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
+              className={`pl-10 block w-full rounded-lg border text-gray-900 ${errors.lastName ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
               placeholder="Doe"
             />
           </div>
@@ -124,7 +124,7 @@ export default function Form({ onSubmit, onChange }: FormProps) {
               name="age"
               value={formData.age}
               onChange={handleChange}
-              className={`pl-10 block w-full rounded-lg border ${errors.age ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
+              className={`pl-10 block w-full rounded-lg border text-gray-900 ${errors.age ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
               placeholder="25"
             />
           </div>
@@ -143,7 +143,7 @@ export default function Form({ onSubmit, onChange }: FormProps) {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`pl-10 block w-full rounded-lg border ${errors.email ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
+              className={`pl-10 block w-full rounded-lg border text-gray-900 ${errors.email ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
               placeholder="john.doe@example.com"
             />
           </div>
@@ -162,7 +162,7 @@ export default function Form({ onSubmit, onChange }: FormProps) {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`pl-10 block w-full rounded-lg border ${errors.phone ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
+              className={`pl-10 block w-full rounded-lg border text-gray-900 ${errors.phone ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} sm:text-sm px-4 py-3 transition-colors outline-none`}
               placeholder="0812345678"
             />
           </div>
@@ -181,7 +181,7 @@ export default function Form({ onSubmit, onChange }: FormProps) {
               value={formData.address}
               onChange={handleChange}
               rows={3}
-              className="pl-10 block w-full rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 sm:text-sm px-4 py-3 transition-colors resize-none outline-none"
+              className="pl-10 block w-full rounded-lg border text-gray-900 border-gray-300 focus:ring-blue-500 focus:border-blue-500 sm:text-sm px-4 py-3 transition-colors resize-none outline-none"
               placeholder="123 Main St, City, Country"
             />
           </div>
