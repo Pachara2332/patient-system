@@ -1,4 +1,6 @@
 # Patient Management System (Real-Time) 🏥
+https://patient-system-production-8241.up.railway.app/
+
 
 ระบบจัดการข้อมูลคนไข้แบบ Real-Time ด้วย **Next.js**, **Tailwind CSS** และ **WebSocket**  
 ออกแบบมาเพื่อการซิงค์ข้อมูลระหว่าง **ฝั่งคนไข้** และ **ฝั่งเจ้าหน้าที่** โดยไม่มีอาการหน่วง  
