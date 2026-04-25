@@ -8,7 +8,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 3000;
 
-// ===== State Cache (เก็บข้อมูลล่าสุดให้คนที่เปิดจอทีหลังเห็นข้อมูลทันที) =====
+// ===== State Cache =====
 let latestPatientData = {};
 let currentStatus = "waiting";
 
@@ -18,13 +18,25 @@ app.prepare().then(() => {
     handle(req, res, parsedUrl);
   });
 
-  // ===== WebSocket Server (รันบน HTTP Server เดียวกับ Next.js) =====
-  const wss = new WebSocket.Server({ server });
+  // ===== WebSocket Server (noServer mode เพื่อไม่ให้ชนกับ Next.js) =====
+  const wss = new WebSocket.Server({ noServer: true });
+
+  // จัดการ upgrade request แยกจาก Next.js
+  server.on("upgrade", (request, socket, head) => {
+    // ถ้าเป็น Next.js HMR (hot reload) ให้ข้ามไป ไม่เข้ามายุ่ง
+    if (request.url?.includes("/_next/")) {
+      return;
+    }
+
+    wss.handleUpgrade(request, socket, head, (ws) => {
+      wss.emit("connection", ws, request);
+    });
+  });
 
   wss.on("connection", (ws) => {
     console.log("Client connected");
 
-    // ส่ง State ที่ Cache ไว้ให้ Client ที่เพิ่งเชื่อมต่อเข้ามา
+    // ส่ง State ที่ Cache ไว้ให้ Client ใหม่ทันที
     ws.send(JSON.stringify({ type: "status", value: currentStatus, timestamp: Date.now() }));
     Object.keys(latestPatientData).forEach((field) => {
       ws.send(JSON.stringify({ type: "update", field, value: latestPatientData[field], timestamp: Date.now() }));
