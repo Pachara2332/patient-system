@@ -15,8 +15,11 @@ export default function StaffPage() {
   const isMounted = useRef(true);
 
   const connectWebSocket = useCallback(() => {
+    const isDev = process.env.NODE_ENV === "development";
     const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-    const wsUrl = `${protocol}//${window.location.host}`;
+    const wsUrl = isDev
+      ? "ws://localhost:3001/ws"
+      : `${protocol}//${window.location.host}/ws`;
     const ws = new WebSocket(wsUrl);
 
     ws.onopen = () => {
