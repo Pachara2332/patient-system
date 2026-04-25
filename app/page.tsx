@@ -18,6 +18,7 @@ export default function Home() {
           {/* Patient Card */}
           <Link 
             href="/patient" 
+            target="_blank"
             className="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
@@ -39,6 +40,7 @@ export default function Home() {
           {/* Staff Card */}
           <Link 
             href="/staff" 
+            target="_blank"
             className="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
