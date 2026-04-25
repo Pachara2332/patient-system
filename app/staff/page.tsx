@@ -15,7 +15,9 @@ export default function StaffPage() {
   const isMounted = useRef(true);
 
   const connectWebSocket = useCallback(() => {
-    const ws = new WebSocket("ws://localhost:3001");
+    const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+    const wsUrl = `${protocol}//${window.location.host}`;
+    const ws = new WebSocket(wsUrl);
 
     ws.onopen = () => {
       console.log("Connected to WebSocket");
