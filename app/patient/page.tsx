@@ -47,7 +47,7 @@ export default function PatientPage() {
     };
   }, [connectWebSocket]);
 
-  const sendStatus = (status: "active" | "inactive" | "submitted") => {
+  const sendStatus = (status: "active" | "inactive" | "submitted" | "waiting") => {
     if (wsRef.current?.readyState === WebSocket.OPEN) {
       wsRef.current.send(JSON.stringify({ type: "status", value: status, timestamp: Date.now() }));
     }
